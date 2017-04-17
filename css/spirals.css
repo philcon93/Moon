@@ -15,6 +15,11 @@
     right: 0;
     margin: auto; }
 
+.square-wrapper {
+  position: relative;
+  width: 100%;
+  height: 550px; }
+
 .square {
   border: 2px solid #00ff96;
   animation: SwimmingPyramid 1.5s linear infinite, PyramidLight 1.5s linear infinite; }
@@ -68,11 +73,11 @@
     animation-delay: 0s; }
 
 @keyframes PyramidLight {
-  20% { }
-  border-width: 16px;
-  80% { }
-  border-width: 2px; }
+  20% {
+    border-width: 16px; }
+  80% {
+    border-width: 2px; } }
 
 @keyframes SwimmingPyramid {
-  100% { }
-  transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg); } }

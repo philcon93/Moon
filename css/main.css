@@ -226,7 +226,6 @@ body {
   box-sizing: border-box; }
 
 .header {
-  height: 100%;
   position: relative;
   width: 100%;
   min-height: 300px;
@@ -446,6 +445,7 @@ header .entry-meta {
 .content {
   font-size: 14px;
   font-size: 0.875rem;
+  line-height: 1.8571;
   margin-bottom: 26px;
   margin-bottom: 1.625rem;
   padding: 0 2rem;
@@ -762,6 +762,7 @@ pre.highlight {
   font-family: Inconsolata;
   font-size: 14px;
   font-size: 0.875rem;
+  line-height: 1.8571;
   margin-bottom: 26px;
   margin-bottom: 1.625rem;
   color: #f8f8f2;
