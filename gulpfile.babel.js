@@ -40,12 +40,8 @@ gulp.task('scripts', () => {
     // Note: You need to explicitly list your scripts here in the right order
     //       to be correctly concatenated
 	'./_scripts/jquery-1.12.0.min.js',
-	'./_scripts/jquery.dlmenu.min.js',
-	'./_scripts/jquery.goup.min.js',
-	'./_scripts/jquery.magnific-popup.min.js',
-	'./_scripts/jquery.fitvid.min.js',
 	'./_scripts/scripts.js',
-    './_scripts/main.js'
+	'./modernizr-3.3.1.custom.min.js'
   ])
     .pipe($.concat('main.min.js'))
     .pipe($.babel())

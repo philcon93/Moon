@@ -2,7 +2,6 @@
 <html>
 {% include head.html %}
 <body class="list">
-    {% include nav.html %}
     <!-- Header -->
     <header class="header" role="banner">
         <div class="wrapper animated fadeIn">
@@ -14,7 +13,7 @@
                     </a>
                 </div>
                 <div class="post-list">
-                    {% for post in site.posts %}
+                    {% for post in site.posts reversed %}
                         {% if post.project == null %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
