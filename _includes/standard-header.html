@@ -7,7 +7,7 @@
 					<i class="fa fa-chevron-left"></i>
 				</a>
 			</div>
-			<article class="post-content">
+			<article class="{% if page.sketch %}post-content{%elsif page.project%}project-content{% else %}page-content{% endif %}">
 			  {{ content }}
 			</article>
 		</div>

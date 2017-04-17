@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to PCdesigns!"
 date:   2017-04-17
 excerpt: "My first Sketch."
+sketch: true
 tag:
 - Sketch
 - design
