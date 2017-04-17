@@ -68,7 +68,7 @@ gulp.task('css', () => {
     'bb >= 10'
   ];
 
-  return gulp.src('css/main.css')
+  return gulp.src('css/*.css')
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.cssnano())
     .pipe(gulp.dest('_site/css'));
@@ -76,7 +76,7 @@ gulp.task('css', () => {
 
 // Compile scss to css.
 gulp.task('scss', () => {
-    return gulp.src('sass/main.sass')
+    return gulp.src('sass/*.sass')
         .pipe($.sass({
             includePaths: ['css'],
             onError: browserSync.notify

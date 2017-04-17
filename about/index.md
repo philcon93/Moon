@@ -12,6 +12,15 @@ I am a hard working designer that has a keen eye for detail and works strongly i
 
 As a graduate that spent the final year of my university studies simulating an indie games studio, I am excellent with managing teams, using different software technology and applying my design knowledge.
 
-JS | jQuery | HTML | CSS | SaSS | LESS | Node | Wordpress | Neto | Git
+- JS
+- jQuery
+- HTML 
+- CSS
+- SaSS
+- LESS
+- Node
+- Wordpress
+- Neto
+- Git
 
 For anymore information of my experience or about myself, feel free to contact me via Linkedin or email; connah_93@hotmail.com.
