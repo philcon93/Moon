@@ -2,6 +2,7 @@ node_modules
 _site/
 .sass-cache/
 .jekyll-metadata
+bower_components/
 
 ### OSX ###
 *.DS_Store

@@ -16,6 +16,11 @@
 	  <link rel="stylesheet" href="{{ site.url }}/css/{{ stylesheet }}.css" media="screen" type="text/css">
 	  {% endfor %}
 	{% endif %}
+	{% if page.sketch %}
+		{% if page.web_component %}
+			<script src="{{ site.url }}/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+		{%endif%}
+	{%endif%}
 	<!-- Background Image -->
     {% if site.background %}
     {% capture background %}{{ site.background }}{% endcapture %}

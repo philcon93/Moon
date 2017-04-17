@@ -41,13 +41,12 @@ gulp.task('scripts', () => {
     //       to be correctly concatenated
 	'./_scripts/jquery-1.12.0.min.js',
 	'./_scripts/scripts.js',
-	'./modernizr-3.3.1.custom.min.js'
+	'./_scripts/modernizr-3.3.1.custom.min.js'
   ])
     .pipe($.concat('main.min.js'))
     .pipe($.babel())
     .pipe($.uglify({preserveComments: 'some'}))
     .pipe(gulp.dest('scripts'))
-	.pipe(gulp.dest('_site/scripts'));
 });
 
 // Minify and add prefix to css.
