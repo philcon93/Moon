@@ -131,7 +131,7 @@ gulp.task('generate-service-worker', function(callback) {
   var rootDir = '_site';
 
   swPrecache.write(path.join(rootDir, 'sw.js'), {
-    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,json}'],
+    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,json,woff}'],
     stripPrefix: rootDir,
     replacePrefix: '/PCdesigns'
   }, callback);
