@@ -14,8 +14,9 @@
       stroke-width: 3;
       stroke-dasharray: 1;
       stroke-dashoffset: 0;
-      animation: stroke-draw 6s ease-out infinite alternate; }
-    :host .circle img {
+      animation: stroke-draw 6s ease-out infinite alternate;
+      animation: stroke-draw 6s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate; }
+    :host .circle ::content img {
       position: absolute;
       left: 50%;
       top: 50%;

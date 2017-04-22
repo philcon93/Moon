@@ -6,17 +6,17 @@
 
 <!-- Defines element markup -->
 <dom-module id="instagram-circle">
-	<!-- TESTTinject-style src="./_site/css/web-components/instagram-circle.css" -->
+	<!-- TESTTinject-style src="./assets/css/web-components/instagram-circle.css" -->
 <style>
-:host{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:70px}:host .circle{position:relative;width:100px;height:100px}:host .circle svg{fill:none;stroke:#8a3ab9;stroke-linecap:round;stroke-width:3;stroke-dasharray:1;stroke-dashoffset:0;-webkit-animation:a 6s ease-out infinite alternate;animation:a 6s ease-out infinite alternate}:host .circle img{position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:70px;border-radius:50%}@-webkit-keyframes a{0%{stroke:#8a3ab9;stroke-dasharray:1}to{stroke:#cd486b;-webkit-transform:rotate(180deg);transform:rotate(180deg);stroke-dasharray:8}}@keyframes a{0%{stroke:#8a3ab9;stroke-dasharray:1}to{stroke:#cd486b;-webkit-transform:rotate(180deg);transform:rotate(180deg);stroke-dasharray:8}}
+:host{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:70px}:host .circle{position:relative;width:100px;height:100px}:host .circle svg{fill:none;stroke:#8a3ab9;stroke-linecap:round;stroke-width:3;stroke-dasharray:1;stroke-dashoffset:0;-webkit-animation:a 6s ease-out infinite alternate;animation:a 6s ease-out infinite alternate;-webkit-animation:a 6s cubic-bezier(.77,0,.175,1) infinite alternate;animation:a 6s cubic-bezier(.77,0,.175,1) infinite alternate}:host .circle ::content img{position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:70px;border-radius:50%}@-webkit-keyframes a{0%{stroke:#8a3ab9;stroke-dasharray:1}to{stroke:#cd486b;-webkit-transform:rotate(180deg);transform:rotate(180deg);stroke-dasharray:8}}@keyframes a{0%{stroke:#8a3ab9;stroke-dasharray:1}to{stroke:#cd486b;-webkit-transform:rotate(180deg);transform:rotate(180deg);stroke-dasharray:8}}
 </style>
     <template>
 		<div class="circle">
-		  <img src="https://en.gravatar.com/userimage/8283692/4c9d9ec1cd3fd02acb5ac9572e3583da?size=200" alt="" />
-		  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="enable-background:new -580 439 577.9 194;"
-		     xml:space="preserve">
-		    <circle cx="50" cy="50" r="40" />
-		  </svg>
+			<content select="img"></content>
+			<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="enable-background:new -580 439 577.9 194;"
+			 xml:space="preserve">
+			<circle cx="50" cy="50" r="40" />
+			</svg>
 		</div>
 	</template>
 
