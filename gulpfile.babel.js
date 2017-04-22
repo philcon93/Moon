@@ -67,7 +67,7 @@ gulp.task('css', () => {
   return gulp.src('css/*.css')
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.cssnano())
-    .pipe(gulp.dest('_site/css'));
+    .pipe(gulp.dest('assets/css'));
 });
 
 // Compile scss to css.
@@ -179,7 +179,7 @@ gulp.task('componentsCSS', () => {
     return gulp.src('css/web-components/*.css')
       .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
       .pipe($.cssnano())
-      .pipe(gulp.dest('_site/css/web-components'));
+      .pipe(gulp.dest('assets/css/web-components'));
 });
 gulp.task('componentsInject', () => {
 	gulp.src('elements/*.html')

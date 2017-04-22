@@ -1,8 +1,11 @@
+$mainColour : #8a3ab9
+$secondColour : #cd486b
+
 :host
 	display: flex
 	align-items: center
 	justify-content: center
-	height: 100vh
+	height: 70px
 
 	.circle
 		position: relative
@@ -10,26 +13,26 @@
 		height: 100px
 		svg
 			fill: none
-			stroke: #8a3ab9
+			stroke: $mainColour
 			stroke-linecap: round
 			stroke-width: 3
 			stroke-dasharray: 1
 			stroke-dashoffset: 0
 			animation: stroke-draw 6s ease-out infinite alternate
 			// animation: stroke-draw 6s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate
-	  img
-		position: absolute
-		left: 50%
-		top: 50%
-		transform: translate(-50%, -50%)
-		width: 70px
-		border-radius: 50%
+		img
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			width: 70px
+			border-radius: 50%
 
 @keyframes stroke-draw
-	0%
-		stroke: #8a3ab9
+	from
+		stroke: $mainColour
 		stroke-dasharray: 1
-	100%
-		stroke: #cd486b
+	to
+		stroke: $secondColour
 		transform: rotate(180deg)
 		stroke-dasharray: 8

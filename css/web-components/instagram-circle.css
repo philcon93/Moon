@@ -2,17 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; }
+  height: 70px; }
   :host .circle {
     position: relative;
     width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    border-radius: 50%; }
+    height: 100px; }
     :host .circle svg {
       fill: none;
       stroke: #8a3ab9;
@@ -21,12 +15,19 @@
       stroke-dasharray: 1;
       stroke-dashoffset: 0;
       animation: stroke-draw 6s ease-out infinite alternate; }
+    :host .circle img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      border-radius: 50%; }
 
 @keyframes stroke-draw {
-  0% {
+  from {
     stroke: #8a3ab9;
     stroke-dasharray: 1; }
-  100% {
+  to {
     stroke: #cd486b;
     transform: rotate(180deg);
     stroke-dasharray: 8; } }
