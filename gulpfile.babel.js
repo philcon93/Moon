@@ -2,7 +2,7 @@
 
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import inject from 'gulp-inject';
+import gulpStyleInject from 'gulp-style-inject';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import swPrecache from 'sw-precache';
@@ -180,20 +180,13 @@ gulp.task('componentsCSS', () => {
     return gulp.src('css/web-components/*.css')
       .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
       .pipe($.cssnano())
-      .pipe(gulp.dest('_site/css/web-components'));
+      .pipe(gulp.dest('css/web-components'));
 });
 
 gulp.task('componentsInject', () => {
 	gulp.src('elements/*.html')
-	  .pipe(inject(gulp.src(['css/web-components/*.css']), {
-	    starttag: '<!-- inject:{{path}} -->',
-	    relative: true,
-	    transform: function (filePath, file) {
-	      // return file contents as string
-	      return file.contents.toString('utf8')
-	    }
-	  }))
-	  .pipe(gulp.dest('elements'));
+	  .pipe(gulpStyleInject())
+	  .pipe(gulp.dest('./elements'));
 });
 
 // Default task.
