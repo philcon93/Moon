@@ -153,6 +153,11 @@ gulp.task('deploy', () => {
   )
 });
 
+// Inject styles to web component
+gulp.task('componentCSS', () => {
+	console.log(process.argv);
+});
+
 // Default task.
 gulp.task('default', () =>
   runSequence(
