@@ -1,1 +1,32 @@
-body{height:100vh}.circle{position:relative;width:100px;height:100px;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:70px;border-radius:50%}.circle svg{fill:none;stroke:#8a3ab9;stroke-linecap:round;stroke-width:3;stroke-dasharray:1;stroke-dashoffset:0;-webkit-animation:a 6s ease-out infinite alternate;animation:a 6s ease-out infinite alternate}@-webkit-keyframes a{0%{stroke:#8a3ab9;stroke-dasharray:1}to{stroke:#cd486b;-webkit-transform:rotate(180deg);transform:rotate(180deg);stroke-dasharray:8}}@keyframes a{0%{stroke:#8a3ab9;stroke-dasharray:1}to{stroke:#cd486b;-webkit-transform:rotate(180deg);transform:rotate(180deg);stroke-dasharray:8}}
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; }
+  :host .circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    border-radius: 50%; }
+    :host .circle svg {
+      fill: none;
+      stroke: #8a3ab9;
+      stroke-linecap: round;
+      stroke-width: 3;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 0;
+      animation: stroke-draw 6s ease-out infinite alternate; }
+
+@keyframes stroke-draw {
+  0% {
+    stroke: #8a3ab9;
+    stroke-dasharray: 1; }
+  100% {
+    stroke: #cd486b;
+    transform: rotate(180deg);
+    stroke-dasharray: 8; } }

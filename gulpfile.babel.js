@@ -163,7 +163,6 @@ gulp.task('componentsSASS', () => {
         }))
         .pipe(gulp.dest('css/web-components'));
 });
-
 gulp.task('componentsCSS', () => {
 	const AUTOPREFIXER_BROWSERS = [
       'ie >= 10',
@@ -180,14 +179,20 @@ gulp.task('componentsCSS', () => {
     return gulp.src('css/web-components/*.css')
       .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
       .pipe($.cssnano())
-      .pipe(gulp.dest('css/web-components'));
+      .pipe(gulp.dest('_site/css/web-components'));
 });
-
 gulp.task('componentsInject', () => {
 	gulp.src('elements/*.html')
 	  .pipe(gulpStyleInject())
 	  .pipe(gulp.dest('./elements'));
 });
+gulp.task('componentBuild', () =>
+  runSequence(
+    'componentsSASS',
+    'componentsCSS',
+    'componentsInject',
+  )
+);
 
 // Default task.
 gulp.task('default', () =>
