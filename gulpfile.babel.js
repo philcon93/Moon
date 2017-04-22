@@ -2,6 +2,7 @@
 
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import inject from 'gulp-inject';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import swPrecache from 'sw-precache';
@@ -154,8 +155,45 @@ gulp.task('deploy', () => {
 });
 
 // Inject styles to web component
-gulp.task('componentCSS', () => {
-	console.log(process.argv);
+gulp.task('componentsSASS', () => {
+	return gulp.src('_sass/web-components/*.sass')
+        .pipe($.sass({
+            includePaths: ['css'],
+            onError: browserSync.notify
+        }))
+        .pipe(gulp.dest('css/web-components'));
+});
+
+gulp.task('componentsCSS', () => {
+	const AUTOPREFIXER_BROWSERS = [
+      'ie >= 10',
+      'ie_mob >= 10',
+      'ff >= 30',
+      'chrome >= 34',
+      'safari >= 7',
+      'opera >= 23',
+      'ios >= 7',
+      'android >= 4.4',
+      'bb >= 10'
+    ];
+
+    return gulp.src('css/web-components/*.css')
+      .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+      .pipe($.cssnano())
+      .pipe(gulp.dest('_site/css/web-components'));
+});
+
+gulp.task('componentsInject', () => {
+	gulp.src('elements/*.html')
+	  .pipe(inject(gulp.src(['css/web-components/*.css']), {
+	    starttag: '<!-- inject:{{path}} -->',
+	    relative: true,
+	    transform: function (filePath, file) {
+	      // return file contents as string
+	      return file.contents.toString('utf8')
+	    }
+	  }))
+	  .pipe(gulp.dest('elements'));
 });
 
 // Default task.
