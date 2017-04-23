@@ -2,10 +2,9 @@ $mainColour : #8a3ab9
 $secondColour : #cd486b
 
 :host
-	display: flex
-	align-items: center
-	justify-content: center
-	height: 70px
+	display: inline-block
+	height: 100px
+	margin: 5px auto
 
 	.circle
 		position: relative
@@ -29,10 +28,10 @@ $secondColour : #cd486b
 			border-radius: 50%
 
 @keyframes stroke-draw
-	from
+	0%
 		stroke: $mainColour
 		stroke-dasharray: 1
-	to
+	100%
 		stroke: $secondColour
 		transform: rotate(180deg)
 		stroke-dasharray: 8

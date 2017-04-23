@@ -1,8 +1,7 @@
 :host {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70px; }
+  display: inline-block;
+  height: 100px;
+  margin: 5px auto; }
   :host .circle {
     position: relative;
     width: 100px;
@@ -25,10 +24,10 @@
       border-radius: 50%; }
 
 @keyframes stroke-draw {
-  from {
+  0% {
     stroke: #8a3ab9;
     stroke-dasharray: 1; }
-  to {
+  100% {
     stroke: #cd486b;
     transform: rotate(180deg);
     stroke-dasharray: 8; } }

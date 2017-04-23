@@ -178,7 +178,9 @@ gulp.task('componentsCSS', () => {
 
     return gulp.src('css/web-components/*.css')
       .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-      .pipe($.cssnano())
+      .pipe($.cssnano({
+  			reduceIdents: false
+		}))
       .pipe(gulp.dest('assets/css/web-components'));
 });
 gulp.task('componentsInject', () => {
