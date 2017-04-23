@@ -33,6 +33,8 @@ instagram_username:     phillycheese93
 # linkedin_username:    username
 # pinterest_username:   username
 
+google_analytics: UA-97717982-2
+
 # Build settings
 markdown: kramdown
 permalink: pretty
