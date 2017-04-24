@@ -1,0 +1,84 @@
+---
+---
+
+<!-- Imports polymer -->
+<link rel="import" href="{{ site.url }}/bower_components/polymer/polymer.html">
+
+<!-- Defines element markup -->
+<dom-module id="my-element">
+	<!-- TEST-inject-style src="./_site/css/web-components/glowing-star.css" -->
+    <template>
+		<div class="first">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="second">
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="third">
+			<ul>
+				<li></li>
+				<li></li>
+				<li class="floating-1"></li>
+				<li class="floating-1"></li>
+				<li class="floating-2"></li>
+				<li class="floating-2"></li>
+			</ul>
+		</div>
+		<div class="fourth">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li class="floating"></li>
+				<li class="floating"></li>
+				<li class="floating"></li>
+				<li class="floating"></li>
+			</ul>
+			<span class="smile"></span>
+			<span class="eyes"></span>
+			<span class="cheeks"></span>
+		</div>
+
+		<div class=random-stars-container>
+			<span class="random-stars"></span>
+			<span class="random-stars"></span>
+			<span class="random-stars"></span>
+			<span class="random-stars"></span>
+		</div>
+
+	</template>
+
+    <!-- Registers custom element -->
+    <script>
+    Polymer({
+        is: 'my-element',
+
+        // Fires when an instance of the element is created
+        created: function() {},
+
+        // Fires when the local DOM has been fully prepared
+        ready: function() {},
+
+        // Fires when the element was inserted into the document
+        attached: function() {},
+
+        // Fires when the element was removed from the document
+        detached: function() {},
+
+        // Fires when an attribute was added, removed, or updated
+        attributeChanged: function(name, type) {}
+    });
+    </script>
+</dom-module>
