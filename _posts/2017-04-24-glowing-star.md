@@ -2,7 +2,7 @@
 layout: post
 title:  "Glowing Star"
 date:   2017-04-24
-excerpt: "Instagram story animation"
+excerpt: "Glowing star animation with happy/sad options"
 sketch: true
 web_component_name: "glowing-star"
 tag:
@@ -10,4 +10,5 @@ tag:
 - design
 comments: true
 ---
-<glowing-star></glowing-star>
+<glowing-star star="happy" direction="left"></glowing-star>
+<glowing-star star="sad" direction="right"></glowing-star>

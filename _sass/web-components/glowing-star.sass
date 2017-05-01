@@ -1,373 +1,529 @@
-// @import 'compass/css3'
+$mainColour: #fff
+$happyColour01: #5048A0
+$happyColour02: #85EDE8
+$happyColour03: #5b2096
 
-$background: #0f111d
-$color: #fff
-$color2: #5048A0
-$color3: #85EDE8
-$color4: #48098b
+$angryColour01: #FF0000
+$angryColour02: #FF530D
+$angryColour03: #da4337
 
 @function randomNum($min, $max)
 	$rand: random()
 	$randomNum: $min + floor($rand * (($max - $min) + 1))
 	@return $randomNum
 
-body
+:host
 	overflow: hidden
-	background: $background
+	width: 300px
+	height: 200px
+	display: inline-block
+	position: relative
 
-canvas
+div.part
+	width: 100px
+	height: 85px
+	background: $mainColour
+	box-shadow: 0px 0px 14px $mainColour
 	position: absolute
-	left: 50%
-	top: 50%
-	@include transform(translate(-50%,-50%))
-div
-	width:100px
-	height:85px
-	@include border-radius(100px 0px 0px 100px)
-	background:$color
-	box-shadow:0px 0px 14px $color
-	@include transform(translate(-50%,-50%))
-	left:50%
-	top:50%
-	position:absolute
+	transform: translate(-50%,-50%)
 	ul
-		margin:0
-		padding:0
+		margin: 0
+		padding: 0
 		li
-			list-style:none
-			display:block
+			list-style: none
+			display: block
 
 	&:nth-child(1)
-		background-color:$color2
-		height:130px
-		width:145px
-		box-shadow: 2px 0px 10px $color2, -5px 0px 10px #5b2096
-		$delay : 0
-		$duration : 0
-		@for $i from 1 through 4
-			$delay : $delay + 0.2
-			$width :0
-			$duration : $duration+randomNum(0.5,2.5)
-			li:nth-child(#{$i})
-				$width : randomNum(120,170)+px
-				width: $width
-				height:32.5px
-				background:$color2
-				background: linear-gradient(to right, $color2 60%, transparent)
-				margin-left:70px
-				border-radius:80px
-				@include animation(glowbg 2s ease-in-out infinite)
-				@include animation-delay($delay+s)
-				@include animation-duration($duration+s)
+		height: 130px
+		width: 145px
 
 	&:nth-child(2)
-		background-color:$color3
-		opacity:0.6
-		height:115px
-		width:130px
-		box-shadow: 0px 0px 15px $color3
+		opacity: 0.6
+		height: 115px
+		width: 130px
 		li:nth-child(1)
-			width:170px
-			background: linear-gradient(to right, $color3 50%, transparent)
-			height:30px
-			margin-left:50px
-			@include border-radius(200px)
-			@include animation(glowbg 3s ease-in-out infinite)
-			@include animation-delay(.5s)
+			width: 170px
+			height: 30px
+			border-radius: 200px
+			animation: glowbg 3s ease-in-out infinite
+			animation-delay: .5s
 
 		li:nth-child(2)
-			width:160px
-			background: linear-gradient(to right, $color3 50%, transparent)
-			height:40px
-			margin-left:50px
-			@include border-radius(200px)
-			margin-top:45px
-			@include animation(glowbg 2.5s ease-in-out infinite)
-			@include animation-delay(.8s)
+			width: 160px
+			height: 40px
+			border-radius: 200px
+			animation: glowbg 2.5s ease-in-out infinite
+			animation-delay: .8s
 
 	&:nth-child(3)
-		background-color:$color3
-		height:100px
-		width:100px
-		margin-left:-8px
-		box-shadow: 0px 0px 15px $color3
+		height: 100px
+		width: 100px
 		li:nth-child(1)
-			width:55px
-			height:10px
-			background:$color3
-			margin-left:50px
-			border-radius:300px
-			position:relative
-			left:0px
-			@include transition(all 0.3s ease)
-			@include animation(anim1 1s ease infinite)
+			width: 55px
+			height: 10px
+			border-radius: 300px
+			position: relative
+			transition: all 0.3s ease
+			animation: anim1 1s ease infinite
 
 		li:nth-child(2)
-			width:90px
-			height:10px
-			background:$color3
-			margin-left:50px
-			border-radius:300px
-			position:relative
-			margin-top:80px
-			left:0px
-			@include transition(all 0.3s ease)
-			@include animation(anim1 1s ease infinite)
-			@include animation-delay(.5s)
-
-		.floating-1
-			@extend li:nth-child(1)
-			position:absolute
-			top:0
-			box-shadow: 0px 0px 5px $color3
-
-		.floating-2
-			@extend li:nth-child(2)
-			position:absolute
-			bottom:0
-
-		li:nth-child(3).floating-1
-			width:40px
-			left: 65px
-			@include animation(f1 2s ease-out infinite)
-
-		li:nth-child(4).floating-1
-			width:15px
-			left: 115px
-			@include animation(f11 1.8s ease-out infinite)
-			@include animation-delay(0s)
-
-		li:nth-child(5).floating-2
-			width:30px
-			left: 0px
-			@include animation(f11 1s ease-out infinite)
-			@include animation-delay(.3s)
-
-		li:nth-child(6).floating-2
-			width:10px
-			left: 0px
-			@include animation(f11 1.5s ease-out infinite)
-			@include animation-delay(.5s)
+			width: 90px
+			height: 10px
+			border-radius: 300px
+			position: relative
+			transition: all 0.3s ease
+			animation: anim1 1s ease infinite
+			animation-delay: .5s
 
 	&:nth-child(4)
-		width:80px
-		margin-left:-10px
-		height:80px
+		width: 80px
+		height: 80px
 		span
-			display:block
-			position:absolute
+			display: block
+			position: absolute
 
 		.eyes
-			width:10px
-			height:10px
-			border-radius:100px
-			background:#000
-			top:30px
-			left:25px
+			width: 10px
+			height: 10px
+			border-radius: 100px
+			background: #000
+			top: 30px
+			left: 25px
 			&::after
-				content:""
-				width:10px
-				height:10px
-				border-radius:100px
-				background:#000
-				position:absolute
-				left:28px
+				content: ""
+				width: 10px
+				height: 10px
+				border-radius: 100px
+				background: #000
+				position: absolute
+				left: 28px
 
 		.smile
-			position:absolute
-			border-bottom-left-radius: 90px
-			border-bottom-right-radius: 90px
-			width: 10px
-			height: 6px
+			position: absolute
+			width: 16px
+			height: 14px
 			background: transparent
 			border: 4px solid #000
 			left: 36px
-    		top: 38px
+			top: 38px
+
 			&::before
 				background: #fff
 				width: 23px
 				height: 5px
 				content: ""
 				position: absolute
-				left: -5px
-				top: -5px
 
 		.cheeks
-			width:10px
-			height:10px
-			background:$color3
-			display:block
-			position:absolute
-			@include border-radius(200px)
-			top:40px
-			left:20px
+			width: 10px
+			height: 10px
+			display: block
+			position: absolute
+			border-radius: 200px
+			top: 40px
+			left: 20px
 
 			&::after
 				content : ""
-				position:absolute
-				width:10px
-				height:10px
-				background:$color3
-				left:40px
-				top:0px
-				@include border-radius(200px)
+				position: absolute
+				width: 10px
+				height: 10px
+				left: 40px
+				top: 0px
+				border-radius: 200px
 
 		li
-			position:relative
-			@include transition(all 0.2s ease)
+			position: relative
+			transition: all 0.2s ease
 
 		li:nth-child(1)
-			width:90px
-			height:12px
-			background:#fff
-			left:50px
-			border-radius:200px
+			width: 90px
+			height: 12px
+			background: #fff
+			border-radius: 200px
 			box-shadow: 0px 0px 10px #fff
-			@include animation(anim2 1.5s ease-out infinite)
+			animation: anim2 1.5s ease-out infinite
 
 		li:nth-child(2)
-			background:radial-gradient(circle at 100% 50%, rgba(204,0,0,0) 4px, #fff 5px)
-			width:70px
-			height:10px
-			margin-left:50px
-			@include animation(anim3 1.6s ease-out infinite)
-			@include animation-delay(0.5s)
+			background: radial-gradient(circle at 100% 50%, rgba(204,0,0,0) 4px, #fff 5px)
+			width: 70px
+			height: 10px
+			animation: anim3 1.6s ease-out infinite
+			animation-delay: 0.5s
 
 		li:nth-child(3)
-			width:105px
-			height:12px
-			background:#fff
-			left:45px
-			border-radius:200px
+			width: 105px
+			height: 12px
+			background: #fff
+			border-radius: 200px
 			box-shadow: 0px 0px 10px #fff
-			@include animation(anim2 1.2s ease-out infinite)
-			@include animation-delay(1s)
+			animation: anim2 1.2s ease-out infinite
+			animation-delay: 1s
 
 		li:nth-child(4)
-			background:radial-gradient(circle at 100% 50%, rgba(204,0,0,0) 4px, #fff 5px)
-			width:65px
-			height:10px
-			margin-left:70px
-			@include animation(anim3 2s ease-out infinite)
-			@include animation-delay(0.5s)
+			background: radial-gradient(circle at 100% 50%, rgba(204,0,0,0) 4px, #fff 5px)
+			width: 65px
+			height: 10px
+			animation: anim3 2s ease-out infinite
+			animation-delay: 0.5s
 
 		li:nth-child(5)
-			width:85px
-			height:12px
-			background:#fff
-			left:60px
-			border-radius:200px
+			width: 85px
+			height: 12px
+			background: #fff
+			border-radius: 200px
 			box-shadow: 0px 0px 10px #fff
-			@include animation(anim4 2s ease-out infinite)
-			@include animation-delay(0.5s)
+			animation: anim4 2s ease-out infinite
+			animation-delay: 0.5s
 
 		li:nth-child(6)
-			background:radial-gradient(circle at 100% 50%, rgba(204,0,0,0) 5px, #fff 6px)
-			width:65px
-			height:12px
-			margin-left:75px
-			@include animation(anim3 1s ease-out infinite)
-			@include animation-delay(0.5s)
+			background: radial-gradient(circle at 100% 50%, rgba(204,0,0,0) 5px, #fff 6px)
+			width: 65px
+			height: 12px
+			animation: anim3 1s ease-out infinite
+			animation-delay: 0.5s
 
 		li:nth-child(7)
-			width:100px
-			height:12px
-			background:#fff
-			left:55px
-			border-radius:200px
+			width: 100px
+			height: 12px
+			background: #fff
+			border-radius: 200px
 			box-shadow: 0px 0px 10px #fff
-			@include animation(anim2 1.3s ease-out infinite)
-			@include animation-delay(0.5s)
+			animation: anim2 1.3s ease-out infinite
+			animation-delay: 0.5s
 
-		.floating
-			position:absolute
-			background:#fff
-			border-radius: 100px
-			@include transition(all 0.5s ease)
-			box-shadow: 0px 0px 10px $color3
-			z-index:-2
-			opacity:0
+:host[star="happy"]
+	div.part
+		border-radius: 100px 0px 0px 100px
+		left: 28%
+		top: 50%
 
-		li:nth-child(8).floating
-			width:12px
-			height:12px
-			top: 0
-			left: 50px
-			@include animation(float1 3s ease infinite)
-			@include animation-delay(.4s)
+		&:nth-child(1)
+			background-color: $happyColour01
+			box-shadow: 2px 0px 10px $happyColour01, -5px 0px 10px $happyColour03
+			$delay : 0
+			$duration : 0
+			@for $i from 1 through 4
+				$delay : $delay + 0.2
+				$width : 0
+				$duration : $duration+randomNum(0.5,2.5)
+				li:nth-child(#{$i})
+					$width : randomNum(120,170)+px
+					width: $width
+					height: 32.5px
+					background: $happyColour01
+					background: linear-gradient(to right, $happyColour01 60%, transparent)
+					margin-left: 70px
+					border-radius: 80px
+					animation: glowbg 2s ease-in-out infinite
+					animation-delay: $delay+s
+					animation-duration: $duration+s
 
-		li:nth-child(9).floating
-			width:12px
-			height:12px
-			top: 22px
-			@include animation(float2 3s ease infinite)
-			@include animation-delay(2.5s)
+		&:nth-child(2)
+			background-color: $happyColour02
+			box-shadow: 0px 0px 15px $happyColour02
+			li:nth-child(1)
+				background: linear-gradient(to right, $happyColour02 50%, transparent)
+				margin-left: 50px
 
-		li:nth-child(10).floating
-			width:12px
-			height:12px
-			top: 44px
-			left: 50px
-			@include animation(float3 3s ease infinite)
-			@include animation-delay(1.5s)
+			li:nth-child(2)
+				background: linear-gradient(to right, $happyColour02 50%, transparent)
+				margin-left: 50px
+				margin-top: 45px
 
-		li:nth-child(11).floating
-			width:12px
-			height:12px
-			top: 67px
-			left: 50px
+		&:nth-child(3)
+			background-color: $happyColour02
+			margin-left: -8px
+			box-shadow: 0px 0px 15px $happyColour02
+			li:nth-child(1)
+				background: $happyColour02
+				margin-left: 50px
+				left: 0px
 
-			@include animation(float4 3s ease infinite)
-			@include animation-delay(1.5s)
+			li:nth-child(2)
+				background: $happyColour02
+				margin-left: 50px
+				margin-top: 80px
+				left: 0px
 
-.random-stars-container
-	width:100%
-	height:50%
-	background:transparent
-	box-shadow:none
-	z-index: -1
-	.random-stars
-		display:block
-		position:absolute
-		opacity:0
-		@include animation(stars-moving 2.5s ease infinite)
+			.floating-1
+				@extend li:nth-child(1)
+				position: absolute
+				top: 0
+				box-shadow: 0px 0px 5px $happyColour02
 
-	.random-stars:nth-child(1)
-		width:15px
-		height:15px
-		background:linear-gradient(to right, $color4, $color3)
-		@include border-radius(100px)
-		left: 500px
-		top:50px
-		@include animation-delay(.5s)
-		@include animation-duration(2s)
+			.floating-2
+				@extend li:nth-child(2)
+				position: absolute
+				bottom: 0
 
-	.random-stars:nth-child(2)
-		width:10px
-		height:10px
-		background:linear-gradient(to right, $color3 30%, transparent)
-		@include border-radius(100px)
-		left: 0px
-		top:80px
+			li:nth-child(3).floating-1
+				width: 40px
+				left: 65px
+				animation: f1 2s ease-out infinite
 
-	.random-stars:nth-child(3)
-		width:10px
-		height:10px
-		background:linear-gradient(to right, $color4 20%, transparent)
-		@include border-radius(100px)
-		left: 0px
-		top:130px
-		@include animation-delay(.8s)
+			li:nth-child(4).floating-1
+				width: 15px
+				left: 115px
+				animation: f11 1.8s ease-out infinite
+				animation-delay: 0s
 
-	.random-stars:nth-child(4)
-		width:12px
-		height:12px
-		background:$color3
-		@include border-radius(100px)
-		left: 0px
-		top:230px
-		@include animation-delay(.2s)
-		@include animation-duration(3.5s)
+			li:nth-child(5).floating-2
+				width: 30px
+				left: 0px
+				animation: f11 1s ease-out infinite
+				animation-delay: .3s
+
+			li:nth-child(6).floating-2
+				width: 10px
+				left: 0px
+				animation: f11 1.5s ease-out infinite
+				animation-delay: .5s
+
+		&:nth-child(4)
+			margin-left: -10px
+
+			.smile
+				border-bottom-left-radius: 90px
+				border-bottom-right-radius: 90px
+
+				&::before
+					left: -5px
+					top: -5px
+
+			.cheeks
+				background: $happyColour02
+
+				&::after
+					background: $happyColour02
+
+			.floating
+				position: absolute
+				background: #fff
+				border-radius: 100px
+				transition: all 0.5s ease
+				box-shadow: 0px 0px 10px $happyColour02
+				z-index: -2
+				opacity: 0
+
+			li:nth-child(1)
+				left: 50px
+
+			li:nth-child(2)
+				margin-left: 50px
+
+			li:nth-child(3)
+				left: 45px
+
+			li:nth-child(4)
+				margin-left: 70px
+
+			li:nth-child(5)
+				left: 60px
+
+			li:nth-child(6)
+				margin-left: 75px
+
+			li:nth-child(7)
+				left: 55px
+
+			li:nth-child(8).floating
+				width: 12px
+				height: 12px
+				top: 0
+				left: 50px
+				animation: float1 3s ease infinite
+				animation-delay: .4s
+
+			li:nth-child(9).floating
+				width: 12px
+				height: 12px
+				top: 22px
+				animation: float2 3s ease infinite
+				animation-delay: 2.5s
+
+			li:nth-child(10).floating
+				width: 12px
+				height: 12px
+				top: 44px
+				left: 50px
+				animation: float3 3s ease infinite
+				animation-delay: 1.5s
+
+			li:nth-child(11).floating
+				width: 12px
+				height: 12px
+				top: 67px
+				left: 50px
+				animation: float4 3s ease infinite
+				animation-delay: 1.5s
+
+:host[star="sad"]
+	div.part
+		border-radius: 100px 0px 0px 100px
+		left: 28%
+		top: 50%
+
+		&:nth-child(1)
+			background-color: $angryColour01
+			box-shadow: 2px 0px 10px $angryColour01, -5px 0px 10px $angryColour03
+			$delay : 0
+			$duration : 0
+			@for $i from 1 through 4
+				$delay : $delay + 0.2
+				$width : 0
+				$duration : $duration+randomNum(0.5,2.5)
+				li:nth-child(#{$i})
+					$width : randomNum(120,170)+px
+					width: $width
+					height: 32.5px
+					background: $angryColour01
+					background: linear-gradient(to right, $angryColour01 60%, transparent)
+					margin-left: 70px
+					border-radius: 80px
+					animation: glowbg 2s ease-in-out infinite
+					animation-delay: $delay+s
+					animation-duration: $duration+s
+
+		&:nth-child(2)
+			background-color: $angryColour02
+			box-shadow: 0px 0px 15px $angryColour02
+			li:nth-child(1)
+				background: linear-gradient(to right, $angryColour02 50%, transparent)
+				margin-left: 50px
+
+			li:nth-child(2)
+				background: linear-gradient(to right, $angryColour02 50%, transparent)
+				margin-left: 50px
+				margin-top: 45px
+
+		&:nth-child(3)
+			background-color: $angryColour02
+			margin-left: -8px
+			box-shadow: 0px 0px 15px $angryColour02
+			li:nth-child(1)
+				background: $angryColour02
+				margin-left: 50px
+				left: 0px
+
+			li:nth-child(2)
+				background: $angryColour02
+				margin-left: 50px
+				margin-top: 80px
+				left: 0px
+
+			.floating-1
+				@extend li:nth-child(1)
+				position: absolute
+				top: 0
+				box-shadow: 0px 0px 5px $angryColour02
+
+			.floating-2
+				@extend li:nth-child(2)
+				position: absolute
+				bottom: 0
+
+			li:nth-child(3).floating-1
+				width: 40px
+				left: 65px
+				animation: f1 2s ease-out infinite
+
+			li:nth-child(4).floating-1
+				width: 15px
+				left: 115px
+				animation: f11 1.8s ease-out infinite
+				animation-delay: 0s
+
+			li:nth-child(5).floating-2
+				width: 30px
+				left: 0px
+				animation: f11 1s ease-out infinite
+				animation-delay: .3s
+
+			li:nth-child(6).floating-2
+				width: 10px
+				left: 0px
+				animation: f11 1.5s ease-out infinite
+				animation-delay: .5s
+
+		&:nth-child(4)
+			margin-left: -10px
+
+			.smile
+				border-bottom-left-radius: 90px
+				border-bottom-right-radius: 90px
+
+				&::before
+					left: -5px
+					top: -5px
+
+			.cheeks
+				background: $angryColour02
+
+				&::after
+					background: $angryColour02
+
+			.floating
+				position: absolute
+				background: #fff
+				border-radius: 100px
+				transition: all 0.5s ease
+				box-shadow: 0px 0px 10px $angryColour02
+				z-index: -2
+				opacity: 0
+
+			li:nth-child(1)
+				left: 50px
+
+			li:nth-child(2)
+				margin-left: 50px
+
+			li:nth-child(3)
+				left: 45px
+
+			li:nth-child(4)
+				margin-left: 70px
+
+			li:nth-child(5)
+				left: 60px
+
+			li:nth-child(6)
+				margin-left: 75px
+
+			li:nth-child(7)
+				left: 55px
+
+			li:nth-child(8).floating
+				width: 12px
+				height: 12px
+				top: 0
+				left: 50px
+				animation: float1 3s ease infinite
+				animation-delay: .4s
+
+			li:nth-child(9).floating
+				width: 12px
+				height: 12px
+				top: 22px
+				animation: float2 3s ease infinite
+				animation-delay: 2.5s
+
+			li:nth-child(10).floating
+				width: 12px
+				height: 12px
+				top: 44px
+				left: 50px
+				animation: float3 3s ease infinite
+				animation-delay: 1.5s
+
+			li:nth-child(11).floating
+				width: 12px
+				height: 12px
+				top: 67px
+				left: 50px
+				animation: float4 3s ease infinite
+				animation-delay: 1.5s
+
 
 @keyframes f1
 	0%
@@ -440,52 +596,52 @@ div
 		opacity: 1
 	70%
 		left: 160px
-		opacity:0
+		opacity: 0
 	100%
 		left: 50px
-		opacity:0
+		opacity: 0
 
 @keyframes float2
 	0%
 		left: 60px
-		opacity:0
+		opacity: 0
 	50%
 		left: 175px
-		opacity:1
+		opacity: 1
 	70%
 		left: 175px
-		opacity:0
+		opacity: 0
 	100%
 		left: 60px
-		opacity:0
+		opacity: 0
 
 @keyframes float3
 	0%
 		left: 50px
-		opacity:0
+		opacity: 0
 	50%
 		left: 160px
-		opacity:1
+		opacity: 1
 	70%
 		left: 160px
-		opacity:0
+		opacity: 0
 	100%
 		left: 50px
-		opacity:0
+		opacity: 0
 
 @keyframes float4
 	0%
 		left: 50px
-		opacity:0
+		opacity: 0
 	50%
 		left: 180px
-		opacity:1
+		opacity: 1
 	70%
 		left: 180px
-		opacity:0
+		opacity: 0
 	100%
 		left: 50px
-		opacity:0
+		opacity: 0
 
 @keyframes glowbg
 	0%
@@ -498,7 +654,7 @@ div
 @keyframes stars-moving
 	0%
 		left: 0
-		opacity:1
+		opacity: 1
 	50%
 		left: 100%
 		opacity: 1
