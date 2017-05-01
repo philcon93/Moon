@@ -10,6 +10,12 @@ tag:
 - design
 comments: true
 ---
+
+
+This web component is based off [Hamza Erbay pen](http://codepen.io/hamzaerbay/pen/LyEjZR).
+
+You can give this web component an image and it will display the image as a circle and have a Instagram stories loading animation around it.
+
 <div style="text-align:center;">
 	<instagram-circle>
 		<img src="https://en.gravatar.com/userimage/8283692/4c9d9ec1cd3fd02acb5ac9572e3583da?size=200" alt="" />
