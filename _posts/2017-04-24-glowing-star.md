@@ -11,4 +11,6 @@ tag:
 comments: true
 ---
 <glowing-star star="happy" direction="left"></glowing-star>
+<glowing-star star="sad" direction="left"></glowing-star>
+<glowing-star star="happy" direction="right"></glowing-star>
 <glowing-star star="sad" direction="right"></glowing-star>

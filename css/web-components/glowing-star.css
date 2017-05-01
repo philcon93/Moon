@@ -5,7 +5,7 @@
   display: inline-block;
   position: relative; }
 
-:host[star="happy"] div.part {
+div.part {
   width: 100px;
   height: 85px;
   border-radius: 100px 0px 0px 100px;
@@ -15,19 +15,19 @@
   left: 28%;
   top: 50%;
   position: absolute; }
-  :host[star="happy"] div.part ul {
+  div.part ul {
     margin: 0;
     padding: 0; }
-    :host[star="happy"] div.part ul li {
+    div.part ul li {
       list-style: none;
       display: block; }
-  :host[star="happy"] div.part:nth-child(1) {
+  div.part:nth-child(1) {
     background-color: #5048A0;
     height: 130px;
     width: 145px;
     box-shadow: 2px 0px 10px #5048A0, -5px 0px 10px #5b2096; }
-    :host[star="happy"] div.part:nth-child(1) li:nth-child(1), :host[star="happy"] div.part:nth-child(1) div.part:nth-child(3) .floating-1 {
-      width: 160px;
+    div.part:nth-child(1) li:nth-child(1), div.part:nth-child(1) div.part:nth-child(3) .floating-1, div.part:nth-child(1) :host[star="happy"] div.part:nth-child(3) .floating-1, :host[star="happy"] div.part:nth-child(1) div.part:nth-child(3) .floating-1, div.part:nth-child(1) :host[star="sad"] div.part:nth-child(3) .floating-1, :host[star="sad"] div.part:nth-child(1) div.part:nth-child(3) .floating-1 {
+      width: 120px;
       height: 32.5px;
       background: #5048A0;
       background: linear-gradient(to right, #5048A0 60%, transparent);
@@ -35,18 +35,8 @@
       border-radius: 80px;
       animation: glowbg 2s ease-in-out infinite;
       animation-delay: 0.2s;
-      animation-duration: 1.5s; }
-    :host[star="happy"] div.part:nth-child(1) li:nth-child(2), :host[star="happy"] div.part:nth-child(1) div.part:nth-child(3) .floating-2 {
-      width: 146px;
-      height: 32.5px;
-      background: #5048A0;
-      background: linear-gradient(to right, #5048A0 60%, transparent);
-      margin-left: 70px;
-      border-radius: 80px;
-      animation: glowbg 2s ease-in-out infinite;
-      animation-delay: 0.4s;
-      animation-duration: 4s; }
-    :host[star="happy"] div.part:nth-child(1) li:nth-child(3) {
+      animation-duration: 0.75s; }
+    div.part:nth-child(1) li:nth-child(2), div.part:nth-child(1) div.part:nth-child(3) .floating-2, div.part:nth-child(1) :host[star="happy"] div.part:nth-child(3) .floating-2, :host[star="happy"] div.part:nth-child(1) div.part:nth-child(3) .floating-2, div.part:nth-child(1) :host[star="sad"] div.part:nth-child(3) .floating-2, :host[star="sad"] div.part:nth-child(1) div.part:nth-child(3) .floating-2 {
       width: 160px;
       height: 32.5px;
       background: #5048A0;
@@ -54,10 +44,20 @@
       margin-left: 70px;
       border-radius: 80px;
       animation: glowbg 2s ease-in-out infinite;
+      animation-delay: 0.4s;
+      animation-duration: 1.5s; }
+    div.part:nth-child(1) li:nth-child(3) {
+      width: 136px;
+      height: 32.5px;
+      background: #5048A0;
+      background: linear-gradient(to right, #5048A0 60%, transparent);
+      margin-left: 70px;
+      border-radius: 80px;
+      animation: glowbg 2s ease-in-out infinite;
       animation-delay: 0.6s;
-      animation-duration: 6.5s; }
-    :host[star="happy"] div.part:nth-child(1) li:nth-child(4) {
-      width: 166px;
+      animation-duration: 2.25s; }
+    div.part:nth-child(1) li:nth-child(4) {
+      width: 164px;
       height: 32.5px;
       background: #5048A0;
       background: linear-gradient(to right, #5048A0 60%, transparent);
@@ -65,14 +65,14 @@
       border-radius: 80px;
       animation: glowbg 2s ease-in-out infinite;
       animation-delay: 0.8s;
-      animation-duration: 7s; }
-  :host[star="happy"] div.part:nth-child(2) {
+      animation-duration: 4s; }
+  div.part:nth-child(2) {
     background-color: #85EDE8;
     opacity: 0.6;
     height: 115px;
     width: 130px;
     box-shadow: 0px 0px 15px #85EDE8; }
-    :host[star="happy"] div.part:nth-child(2) li:nth-child(1), :host[star="happy"] div.part:nth-child(2) div.part:nth-child(3) .floating-1 {
+    div.part:nth-child(2) li:nth-child(1), div.part:nth-child(2) div.part:nth-child(3) .floating-1, div.part:nth-child(2) :host[star="happy"] div.part:nth-child(3) .floating-1, :host[star="happy"] div.part:nth-child(2) div.part:nth-child(3) .floating-1, div.part:nth-child(2) :host[star="sad"] div.part:nth-child(3) .floating-1, :host[star="sad"] div.part:nth-child(2) div.part:nth-child(3) .floating-1 {
       width: 170px;
       background: linear-gradient(to right, #85EDE8 50%, transparent);
       height: 30px;
@@ -80,7 +80,7 @@
       border-radius: 200px;
       animation: glowbg 3s ease-in-out infinite;
       animation-delay: .5s; }
-    :host[star="happy"] div.part:nth-child(2) li:nth-child(2), :host[star="happy"] div.part:nth-child(2) div.part:nth-child(3) .floating-2 {
+    div.part:nth-child(2) li:nth-child(2), div.part:nth-child(2) div.part:nth-child(3) .floating-2, div.part:nth-child(2) :host[star="happy"] div.part:nth-child(3) .floating-2, :host[star="happy"] div.part:nth-child(2) div.part:nth-child(3) .floating-2, div.part:nth-child(2) :host[star="sad"] div.part:nth-child(3) .floating-2, :host[star="sad"] div.part:nth-child(2) div.part:nth-child(3) .floating-2 {
       width: 160px;
       background: linear-gradient(to right, #85EDE8 50%, transparent);
       height: 40px;
@@ -89,13 +89,13 @@
       margin-top: 45px;
       animation: glowbg 2.5s ease-in-out infinite;
       animation-delay: .8s; }
-  :host[star="happy"] div.part:nth-child(3) {
+  div.part:nth-child(3) {
     background-color: #85EDE8;
     height: 100px;
     width: 100px;
     margin-left: -8px;
     box-shadow: 0px 0px 15px #85EDE8; }
-    :host[star="happy"] div.part:nth-child(3) li:nth-child(1), :host[star="happy"] div.part:nth-child(3) .floating-1 {
+    div.part:nth-child(3) li:nth-child(1), div.part:nth-child(3) .floating-1, :host[star="happy"] div.part:nth-child(3) .floating-1, :host[star="sad"] div.part:nth-child(3) .floating-1 {
       width: 55px;
       height: 10px;
       background: #85EDE8;
@@ -105,7 +105,7 @@
       left: 0px;
       transition: all 0.3s ease;
       animation: anim1 1s ease infinite; }
-    :host[star="happy"] div.part:nth-child(3) li:nth-child(2), :host[star="happy"] div.part:nth-child(3) .floating-2 {
+    div.part:nth-child(3) li:nth-child(2), div.part:nth-child(3) .floating-2, :host[star="happy"] div.part:nth-child(3) .floating-2, :host[star="sad"] div.part:nth-child(3) .floating-2 {
       width: 90px;
       height: 10px;
       background: #85EDE8;
@@ -117,6 +117,255 @@
       transition: all 0.3s ease;
       animation: anim1 1s ease infinite;
       animation-delay: .5s; }
+    div.part:nth-child(3) .floating-1 {
+      position: absolute;
+      top: 0;
+      box-shadow: 0px 0px 5px #85EDE8; }
+    div.part:nth-child(3) .floating-2 {
+      position: absolute;
+      bottom: 0; }
+    div.part:nth-child(3) li:nth-child(3).floating-1 {
+      width: 40px;
+      left: 65px;
+      animation: f1 2s ease-out infinite; }
+    div.part:nth-child(3) li:nth-child(4).floating-1 {
+      width: 15px;
+      left: 115px;
+      animation: f11 1.8s ease-out infinite;
+      animation-delay: 0s; }
+    div.part:nth-child(3) li:nth-child(5).floating-2 {
+      width: 30px;
+      left: 0px;
+      animation: f11 1s ease-out infinite;
+      animation-delay: .3s; }
+    div.part:nth-child(3) li:nth-child(6).floating-2 {
+      width: 10px;
+      left: 0px;
+      animation: f11 1.5s ease-out infinite;
+      animation-delay: .5s; }
+  div.part:nth-child(4) {
+    width: 80px;
+    margin-left: -10px;
+    height: 80px; }
+    div.part:nth-child(4) span {
+      display: block;
+      position: absolute; }
+    div.part:nth-child(4) .eyes {
+      width: 10px;
+      height: 10px;
+      border-radius: 100px;
+      background: #000;
+      top: 30px;
+      left: 25px; }
+      div.part:nth-child(4) .eyes::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        background: #000;
+        position: absolute;
+        left: 28px; }
+    div.part:nth-child(4) .smile {
+      position: absolute;
+      border-bottom-left-radius: 90px;
+      border-bottom-right-radius: 90px;
+      width: 16px;
+      height: 14px;
+      background: transparent;
+      border: 4px solid #000;
+      left: 36px;
+      top: 38px; }
+      div.part:nth-child(4) .smile::before {
+        background: #fff;
+        width: 23px;
+        height: 5px;
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: -5px; }
+    div.part:nth-child(4) .cheeks {
+      width: 10px;
+      height: 10px;
+      background: #85EDE8;
+      display: block;
+      position: absolute;
+      border-radius: 200px;
+      top: 40px;
+      left: 20px; }
+      div.part:nth-child(4) .cheeks::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #85EDE8;
+        left: 40px;
+        top: 0px;
+        border-radius: 200px; }
+    div.part:nth-child(4) .floating {
+      position: absolute;
+      background: #fff;
+      border-radius: 100px;
+      transition: all 0.5s ease;
+      box-shadow: 0px 0px 10px #85EDE8;
+      z-index: -2;
+      opacity: 0; }
+    div.part:nth-child(4) li {
+      position: relative;
+      transition: all 0.2s ease; }
+    div.part:nth-child(4) li:nth-child(1), div.part:nth-child(4) div.part:nth-child(3) .floating-1, div.part:nth-child(4) :host[star="happy"] div.part:nth-child(3) .floating-1, :host[star="happy"] div.part:nth-child(4) div.part:nth-child(3) .floating-1, div.part:nth-child(4) :host[star="sad"] div.part:nth-child(3) .floating-1, :host[star="sad"] div.part:nth-child(4) div.part:nth-child(3) .floating-1 {
+      width: 90px;
+      height: 12px;
+      background: #fff;
+      left: 50px;
+      border-radius: 200px;
+      box-shadow: 0px 0px 10px #fff;
+      animation: anim2 1.5s ease-out infinite; }
+    div.part:nth-child(4) li:nth-child(2), div.part:nth-child(4) div.part:nth-child(3) .floating-2, div.part:nth-child(4) :host[star="happy"] div.part:nth-child(3) .floating-2, :host[star="happy"] div.part:nth-child(4) div.part:nth-child(3) .floating-2, div.part:nth-child(4) :host[star="sad"] div.part:nth-child(3) .floating-2, :host[star="sad"] div.part:nth-child(4) div.part:nth-child(3) .floating-2 {
+      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 4px, #fff 5px);
+      width: 70px;
+      height: 10px;
+      margin-left: 50px;
+      animation: anim3 1.6s ease-out infinite;
+      animation-delay: 0.5s; }
+    div.part:nth-child(4) li:nth-child(3) {
+      width: 105px;
+      height: 12px;
+      background: #fff;
+      left: 45px;
+      border-radius: 200px;
+      box-shadow: 0px 0px 10px #fff;
+      animation: anim2 1.2s ease-out infinite;
+      animation-delay: 1s; }
+    div.part:nth-child(4) li:nth-child(4) {
+      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 4px, #fff 5px);
+      width: 65px;
+      height: 10px;
+      margin-left: 70px;
+      animation: anim3 2s ease-out infinite;
+      animation-delay: 0.5s; }
+    div.part:nth-child(4) li:nth-child(5) {
+      width: 85px;
+      height: 12px;
+      background: #fff;
+      left: 60px;
+      border-radius: 200px;
+      box-shadow: 0px 0px 10px #fff;
+      animation: anim4 2s ease-out infinite;
+      animation-delay: 0.5s; }
+    div.part:nth-child(4) li:nth-child(6) {
+      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 5px, #fff 6px);
+      width: 65px;
+      height: 12px;
+      margin-left: 75px;
+      animation: anim3 1s ease-out infinite;
+      animation-delay: 0.5s; }
+    div.part:nth-child(4) li:nth-child(7) {
+      width: 100px;
+      height: 12px;
+      background: #fff;
+      left: 55px;
+      border-radius: 200px;
+      box-shadow: 0px 0px 10px #fff;
+      animation: anim2 1.3s ease-out infinite;
+      animation-delay: 0.5s; }
+    div.part:nth-child(4) li:nth-child(8).floating {
+      width: 12px;
+      height: 12px;
+      top: 0;
+      left: 50px;
+      animation: float1 3s ease infinite;
+      animation-delay: .4s; }
+    div.part:nth-child(4) li:nth-child(9).floating {
+      width: 12px;
+      height: 12px;
+      top: 22px;
+      animation: float2 3s ease infinite;
+      animation-delay: 2.5s; }
+    div.part:nth-child(4) li:nth-child(10).floating {
+      width: 12px;
+      height: 12px;
+      top: 44px;
+      left: 50px;
+      animation: float3 3s ease infinite;
+      animation-delay: 1.5s; }
+    div.part:nth-child(4) li:nth-child(11).floating {
+      width: 12px;
+      height: 12px;
+      top: 67px;
+      left: 50px;
+      animation: float4 3s ease infinite;
+      animation-delay: 1.5s; }
+
+:host[star="happy"] div.part {
+  border-radius: 100px 0px 0px 100px;
+  left: 28%;
+  top: 50%; }
+  :host[star="happy"] div.part:nth-child(1) {
+    background-color: #5048A0;
+    box-shadow: 2px 0px 10px #5048A0, -5px 0px 10px #5b2096; }
+    :host[star="happy"] div.part:nth-child(1) li:nth-child(1), :host[star="happy"] div.part:nth-child(1) div.part:nth-child(3) .floating-1 {
+      width: 122px;
+      height: 32.5px;
+      background: #5048A0;
+      background: linear-gradient(to right, #5048A0 60%, transparent);
+      margin-left: 70px;
+      border-radius: 80px;
+      animation: glowbg 2s ease-in-out infinite;
+      animation-delay: 0.2s;
+      animation-duration: 2.75s; }
+    :host[star="happy"] div.part:nth-child(1) li:nth-child(2), :host[star="happy"] div.part:nth-child(1) div.part:nth-child(3) .floating-2 {
+      width: 145px;
+      height: 32.5px;
+      background: #5048A0;
+      background: linear-gradient(to right, #5048A0 60%, transparent);
+      margin-left: 70px;
+      border-radius: 80px;
+      animation: glowbg 2s ease-in-out infinite;
+      animation-delay: 0.4s;
+      animation-duration: 3.5s; }
+    :host[star="happy"] div.part:nth-child(1) li:nth-child(3) {
+      width: 169px;
+      height: 32.5px;
+      background: #5048A0;
+      background: linear-gradient(to right, #5048A0 60%, transparent);
+      margin-left: 70px;
+      border-radius: 80px;
+      animation: glowbg 2s ease-in-out infinite;
+      animation-delay: 0.6s;
+      animation-duration: 6.25s; }
+    :host[star="happy"] div.part:nth-child(1) li:nth-child(4) {
+      width: 157px;
+      height: 32.5px;
+      background: #5048A0;
+      background: linear-gradient(to right, #5048A0 60%, transparent);
+      margin-left: 70px;
+      border-radius: 80px;
+      animation: glowbg 2s ease-in-out infinite;
+      animation-delay: 0.8s;
+      animation-duration: 8s; }
+  :host[star="happy"] div.part:nth-child(2) {
+    background-color: #85EDE8;
+    box-shadow: 0px 0px 15px #85EDE8; }
+    :host[star="happy"] div.part:nth-child(2) li:nth-child(1), :host[star="happy"] div.part:nth-child(2) div.part:nth-child(3) .floating-1 {
+      background: linear-gradient(to right, #85EDE8 50%, transparent);
+      margin-left: 50px; }
+    :host[star="happy"] div.part:nth-child(2) li:nth-child(2), :host[star="happy"] div.part:nth-child(2) div.part:nth-child(3) .floating-2 {
+      background: linear-gradient(to right, #85EDE8 50%, transparent);
+      margin-left: 50px;
+      margin-top: 45px; }
+  :host[star="happy"] div.part:nth-child(3) {
+    background-color: #85EDE8;
+    margin-left: -8px;
+    box-shadow: 0px 0px 15px #85EDE8; }
+    :host[star="happy"] div.part:nth-child(3) li:nth-child(1), :host[star="happy"] div.part:nth-child(3) .floating-1 {
+      background: #85EDE8;
+      margin-left: 50px;
+      left: 0px; }
+    :host[star="happy"] div.part:nth-child(3) li:nth-child(2), :host[star="happy"] div.part:nth-child(3) .floating-2 {
+      background: #85EDE8;
+      margin-left: 50px;
+      margin-top: 80px;
+      left: 0px; }
     :host[star="happy"] div.part:nth-child(3) .floating-1 {
       position: absolute;
       top: 0;
@@ -144,63 +393,17 @@
       animation: f11 1.5s ease-out infinite;
       animation-delay: .5s; }
   :host[star="happy"] div.part:nth-child(4) {
-    width: 80px;
-    margin-left: -10px;
-    height: 80px; }
-    :host[star="happy"] div.part:nth-child(4) span {
-      display: block;
-      position: absolute; }
-    :host[star="happy"] div.part:nth-child(4) .eyes {
-      width: 10px;
-      height: 10px;
-      border-radius: 100px;
-      background: #000;
-      top: 30px;
-      left: 25px; }
-      :host[star="happy"] div.part:nth-child(4) .eyes::after {
-        content: "";
-        width: 10px;
-        height: 10px;
-        border-radius: 100px;
-        background: #000;
-        position: absolute;
-        left: 28px; }
+    margin-left: -10px; }
     :host[star="happy"] div.part:nth-child(4) .smile {
-      position: absolute;
       border-bottom-left-radius: 90px;
-      border-bottom-right-radius: 90px;
-      width: 16px;
-      height: 14px;
-      background: transparent;
-      border: 4px solid #000;
-      left: 36px;
-      top: 38px; }
+      border-bottom-right-radius: 90px; }
       :host[star="happy"] div.part:nth-child(4) .smile::before {
-        background: #fff;
-        width: 23px;
-        height: 5px;
-        content: "";
-        position: absolute;
         left: -5px;
         top: -5px; }
     :host[star="happy"] div.part:nth-child(4) .cheeks {
-      width: 10px;
-      height: 10px;
-      background: #85EDE8;
-      display: block;
-      position: absolute;
-      border-radius: 200px;
-      top: 40px;
-      left: 20px; }
+      background: #85EDE8; }
       :host[star="happy"] div.part:nth-child(4) .cheeks::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background: #85EDE8;
-        left: 40px;
-        top: 0px;
-        border-radius: 200px; }
+        background: #85EDE8; }
     :host[star="happy"] div.part:nth-child(4) .floating {
       position: absolute;
       background: #fff;
@@ -209,65 +412,20 @@
       box-shadow: 0px 0px 10px #85EDE8;
       z-index: -2;
       opacity: 0; }
-    :host[star="happy"] div.part:nth-child(4) li {
-      position: relative;
-      transition: all 0.2s ease; }
     :host[star="happy"] div.part:nth-child(4) li:nth-child(1), :host[star="happy"] div.part:nth-child(4) div.part:nth-child(3) .floating-1 {
-      width: 90px;
-      height: 12px;
-      background: #fff;
-      left: 50px;
-      border-radius: 200px;
-      box-shadow: 0px 0px 10px #fff;
-      animation: anim2 1.5s ease-out infinite; }
+      left: 50px; }
     :host[star="happy"] div.part:nth-child(4) li:nth-child(2), :host[star="happy"] div.part:nth-child(4) div.part:nth-child(3) .floating-2 {
-      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 4px, #fff 5px);
-      width: 70px;
-      height: 10px;
-      margin-left: 50px;
-      animation: anim3 1.6s ease-out infinite;
-      animation-delay: 0.5s; }
+      margin-left: 50px; }
     :host[star="happy"] div.part:nth-child(4) li:nth-child(3) {
-      width: 105px;
-      height: 12px;
-      background: #fff;
-      left: 45px;
-      border-radius: 200px;
-      box-shadow: 0px 0px 10px #fff;
-      animation: anim2 1.2s ease-out infinite;
-      animation-delay: 1s; }
+      left: 45px; }
     :host[star="happy"] div.part:nth-child(4) li:nth-child(4) {
-      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 4px, #fff 5px);
-      width: 65px;
-      height: 10px;
-      margin-left: 70px;
-      animation: anim3 2s ease-out infinite;
-      animation-delay: 0.5s; }
+      margin-left: 70px; }
     :host[star="happy"] div.part:nth-child(4) li:nth-child(5) {
-      width: 85px;
-      height: 12px;
-      background: #fff;
-      left: 60px;
-      border-radius: 200px;
-      box-shadow: 0px 0px 10px #fff;
-      animation: anim4 2s ease-out infinite;
-      animation-delay: 0.5s; }
+      left: 60px; }
     :host[star="happy"] div.part:nth-child(4) li:nth-child(6) {
-      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 5px, #fff 6px);
-      width: 65px;
-      height: 12px;
-      margin-left: 75px;
-      animation: anim3 1s ease-out infinite;
-      animation-delay: 0.5s; }
+      margin-left: 75px; }
     :host[star="happy"] div.part:nth-child(4) li:nth-child(7) {
-      width: 100px;
-      height: 12px;
-      background: #fff;
-      left: 55px;
-      border-radius: 200px;
-      box-shadow: 0px 0px 10px #fff;
-      animation: anim2 1.3s ease-out infinite;
-      animation-delay: 0.5s; }
+      left: 55px; }
     :host[star="happy"] div.part:nth-child(4) li:nth-child(8).floating {
       width: 12px;
       height: 12px;
@@ -296,29 +454,15 @@
       animation: float4 3s ease infinite;
       animation-delay: 1.5s; }
 
-:host[star="angry"] div.part {
-  width: 100px;
-  height: 85px;
+:host[star="sad"] div.part {
   border-radius: 100px 0px 0px 100px;
-  background: #fff;
-  box-shadow: 0px 0px 14px #fff;
-  transform: translate(-50%, -50%);
   left: 28%;
-  top: 50%;
-  position: absolute; }
-  :host[star="angry"] div.part ul {
-    margin: 0;
-    padding: 0; }
-    :host[star="angry"] div.part ul li {
-      list-style: none;
-      display: block; }
-  :host[star="angry"] div.part:nth-child(1) {
+  top: 50%; }
+  :host[star="sad"] div.part:nth-child(1) {
     background-color: #FF0000;
-    height: 130px;
-    width: 145px;
     box-shadow: 2px 0px 10px #FF0000, -5px 0px 10px #da4337; }
-    :host[star="angry"] div.part:nth-child(1) li:nth-child(1), :host[star="angry"] div.part:nth-child(1) div.part:nth-child(3) .floating-1 {
-      width: 167px;
+    :host[star="sad"] div.part:nth-child(1) li:nth-child(1), :host[star="sad"] div.part:nth-child(1) div.part:nth-child(3) .floating-1 {
+      width: 169px;
       height: 32.5px;
       background: #FF0000;
       background: linear-gradient(to right, #FF0000 60%, transparent);
@@ -326,9 +470,9 @@
       border-radius: 80px;
       animation: glowbg 2s ease-in-out infinite;
       animation-delay: 0.2s;
-      animation-duration: 2.5s; }
-    :host[star="angry"] div.part:nth-child(1) li:nth-child(2), :host[star="angry"] div.part:nth-child(1) div.part:nth-child(3) .floating-2 {
-      width: 153px;
+      animation-duration: 0.75s; }
+    :host[star="sad"] div.part:nth-child(1) li:nth-child(2), :host[star="sad"] div.part:nth-child(1) div.part:nth-child(3) .floating-2 {
+      width: 139px;
       height: 32.5px;
       background: #FF0000;
       background: linear-gradient(to right, #FF0000 60%, transparent);
@@ -336,9 +480,9 @@
       border-radius: 80px;
       animation: glowbg 2s ease-in-out infinite;
       animation-delay: 0.4s;
-      animation-duration: 3s; }
-    :host[star="angry"] div.part:nth-child(1) li:nth-child(3) {
-      width: 131px;
+      animation-duration: 1.5s; }
+    :host[star="sad"] div.part:nth-child(1) li:nth-child(3) {
+      width: 150px;
       height: 32.5px;
       background: #FF0000;
       background: linear-gradient(to right, #FF0000 60%, transparent);
@@ -346,9 +490,9 @@
       border-radius: 80px;
       animation: glowbg 2s ease-in-out infinite;
       animation-delay: 0.6s;
-      animation-duration: 4.5s; }
-    :host[star="angry"] div.part:nth-child(1) li:nth-child(4) {
-      width: 149px;
+      animation-duration: 2.25s; }
+    :host[star="sad"] div.part:nth-child(1) li:nth-child(4) {
+      width: 128px;
       height: 32.5px;
       background: #FF0000;
       background: linear-gradient(to right, #FF0000 60%, transparent);
@@ -356,143 +500,71 @@
       border-radius: 80px;
       animation: glowbg 2s ease-in-out infinite;
       animation-delay: 0.8s;
-      animation-duration: 6s; }
-  :host[star="angry"] div.part:nth-child(2) {
+      animation-duration: 3s; }
+  :host[star="sad"] div.part:nth-child(2) {
     background-color: #FF530D;
-    opacity: 0.6;
-    height: 115px;
-    width: 130px;
     box-shadow: 0px 0px 15px #FF530D; }
-    :host[star="angry"] div.part:nth-child(2) li:nth-child(1), :host[star="angry"] div.part:nth-child(2) div.part:nth-child(3) .floating-1 {
-      width: 170px;
+    :host[star="sad"] div.part:nth-child(2) li:nth-child(1), :host[star="sad"] div.part:nth-child(2) div.part:nth-child(3) .floating-1 {
       background: linear-gradient(to right, #FF530D 50%, transparent);
-      height: 30px;
-      margin-left: 50px;
-      border-radius: 200px;
-      animation: glowbg 3s ease-in-out infinite;
-      animation-delay: .5s; }
-    :host[star="angry"] div.part:nth-child(2) li:nth-child(2), :host[star="angry"] div.part:nth-child(2) div.part:nth-child(3) .floating-2 {
-      width: 160px;
+      margin-left: 50px; }
+    :host[star="sad"] div.part:nth-child(2) li:nth-child(2), :host[star="sad"] div.part:nth-child(2) div.part:nth-child(3) .floating-2 {
       background: linear-gradient(to right, #FF530D 50%, transparent);
-      height: 40px;
       margin-left: 50px;
-      border-radius: 200px;
-      margin-top: 45px;
-      animation: glowbg 2.5s ease-in-out infinite;
-      animation-delay: .8s; }
-  :host[star="angry"] div.part:nth-child(3) {
+      margin-top: 45px; }
+  :host[star="sad"] div.part:nth-child(3) {
     background-color: #FF530D;
-    height: 100px;
-    width: 100px;
     margin-left: -8px;
     box-shadow: 0px 0px 15px #FF530D; }
-    :host[star="angry"] div.part:nth-child(3) li:nth-child(1), :host[star="angry"] div.part:nth-child(3) .floating-1 {
-      width: 55px;
-      height: 10px;
+    :host[star="sad"] div.part:nth-child(3) li:nth-child(1), :host[star="sad"] div.part:nth-child(3) .floating-1 {
       background: #FF530D;
       margin-left: 50px;
-      border-radius: 300px;
-      position: relative;
-      left: 0px;
-      transition: all 0.3s ease;
-      animation: anim1 1s ease infinite; }
-    :host[star="angry"] div.part:nth-child(3) li:nth-child(2), :host[star="angry"] div.part:nth-child(3) .floating-2 {
-      width: 90px;
-      height: 10px;
+      left: 0px; }
+    :host[star="sad"] div.part:nth-child(3) li:nth-child(2), :host[star="sad"] div.part:nth-child(3) .floating-2 {
       background: #FF530D;
       margin-left: 50px;
-      border-radius: 300px;
-      position: relative;
       margin-top: 80px;
-      left: 0px;
-      transition: all 0.3s ease;
-      animation: anim1 1s ease infinite;
-      animation-delay: .5s; }
-    :host[star="angry"] div.part:nth-child(3) .floating-1 {
+      left: 0px; }
+    :host[star="sad"] div.part:nth-child(3) .floating-1 {
       position: absolute;
       top: 0;
       box-shadow: 0px 0px 5px #FF530D; }
-    :host[star="angry"] div.part:nth-child(3) .floating-2 {
+    :host[star="sad"] div.part:nth-child(3) .floating-2 {
       position: absolute;
       bottom: 0; }
-    :host[star="angry"] div.part:nth-child(3) li:nth-child(3).floating-1 {
+    :host[star="sad"] div.part:nth-child(3) li:nth-child(3).floating-1 {
       width: 40px;
       left: 65px;
       animation: f1 2s ease-out infinite; }
-    :host[star="angry"] div.part:nth-child(3) li:nth-child(4).floating-1 {
+    :host[star="sad"] div.part:nth-child(3) li:nth-child(4).floating-1 {
       width: 15px;
       left: 115px;
       animation: f11 1.8s ease-out infinite;
       animation-delay: 0s; }
-    :host[star="angry"] div.part:nth-child(3) li:nth-child(5).floating-2 {
+    :host[star="sad"] div.part:nth-child(3) li:nth-child(5).floating-2 {
       width: 30px;
       left: 0px;
       animation: f11 1s ease-out infinite;
       animation-delay: .3s; }
-    :host[star="angry"] div.part:nth-child(3) li:nth-child(6).floating-2 {
+    :host[star="sad"] div.part:nth-child(3) li:nth-child(6).floating-2 {
       width: 10px;
       left: 0px;
       animation: f11 1.5s ease-out infinite;
       animation-delay: .5s; }
-  :host[star="angry"] div.part:nth-child(4) {
-    width: 80px;
-    margin-left: -10px;
-    height: 80px; }
-    :host[star="angry"] div.part:nth-child(4) span {
-      display: block;
-      position: absolute; }
-    :host[star="angry"] div.part:nth-child(4) .eyes {
-      width: 10px;
-      height: 10px;
-      border-radius: 100px;
-      background: #000;
-      top: 30px;
-      left: 25px; }
-      :host[star="angry"] div.part:nth-child(4) .eyes::after {
-        content: "";
-        width: 10px;
-        height: 10px;
-        border-radius: 100px;
-        background: #000;
-        position: absolute;
-        left: 28px; }
-    :host[star="angry"] div.part:nth-child(4) .smile {
-      position: absolute;
+  :host[star="sad"] div.part:nth-child(4) {
+    margin-left: -10px; }
+    :host[star="sad"] div.part:nth-child(4) .smile {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
       border-top-left-radius: 90px;
-      border-top-right-radius: 90px;
-      width: 16px;
-      height: 14px;
-      background: transparent;
-      border: 4px solid #000;
-      left: 36px;
-      top: 38px; }
-      :host[star="angry"] div.part:nth-child(4) .smile::before {
-        background: #fff;
-        width: 23px;
-        height: 5px;
-        content: "";
-        position: absolute;
+      border-top-right-radius: 90px; }
+      :host[star="sad"] div.part:nth-child(4) .smile::before {
         left: -5px;
         top: 5px; }
-    :host[star="angry"] div.part:nth-child(4) .cheeks {
-      width: 10px;
-      height: 10px;
-      background: #FF530D;
-      display: block;
-      position: absolute;
-      border-radius: 200px;
-      top: 40px;
-      left: 20px; }
-      :host[star="angry"] div.part:nth-child(4) .cheeks::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background: #FF530D;
-        left: 40px;
-        top: 0px;
-        border-radius: 200px; }
-    :host[star="angry"] div.part:nth-child(4) .floating {
+    :host[star="sad"] div.part:nth-child(4) .cheeks {
+      background: #FF530D; }
+      :host[star="sad"] div.part:nth-child(4) .cheeks::after {
+        background: #FF530D; }
+    :host[star="sad"] div.part:nth-child(4) .floating {
       position: absolute;
       background: #fff;
       border-radius: 100px;
@@ -500,92 +572,72 @@
       box-shadow: 0px 0px 10px #FF530D;
       z-index: -2;
       opacity: 0; }
-    :host[star="angry"] div.part:nth-child(4) li {
-      position: relative;
-      transition: all 0.2s ease; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(1), :host[star="angry"] div.part:nth-child(4) div.part:nth-child(3) .floating-1 {
-      width: 90px;
-      height: 12px;
-      background: #fff;
-      left: 50px;
-      border-radius: 200px;
-      box-shadow: 0px 0px 10px #fff;
-      animation: anim2 1.5s ease-out infinite; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(2), :host[star="angry"] div.part:nth-child(4) div.part:nth-child(3) .floating-2 {
-      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 4px, #fff 5px);
-      width: 70px;
-      height: 10px;
-      margin-left: 50px;
-      animation: anim3 1.6s ease-out infinite;
-      animation-delay: 0.5s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(3) {
-      width: 105px;
-      height: 12px;
-      background: #fff;
-      left: 45px;
-      border-radius: 200px;
-      box-shadow: 0px 0px 10px #fff;
-      animation: anim2 1.2s ease-out infinite;
-      animation-delay: 1s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(4) {
-      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 4px, #fff 5px);
-      width: 65px;
-      height: 10px;
-      margin-left: 70px;
-      animation: anim3 2s ease-out infinite;
-      animation-delay: 0.5s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(5) {
-      width: 85px;
-      height: 12px;
-      background: #fff;
-      left: 60px;
-      border-radius: 200px;
-      box-shadow: 0px 0px 10px #fff;
-      animation: anim4 2s ease-out infinite;
-      animation-delay: 0.5s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(6) {
-      background: radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 5px, #fff 6px);
-      width: 65px;
-      height: 12px;
-      margin-left: 75px;
-      animation: anim3 1s ease-out infinite;
-      animation-delay: 0.5s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(7) {
-      width: 100px;
-      height: 12px;
-      background: #fff;
-      left: 55px;
-      border-radius: 200px;
-      box-shadow: 0px 0px 10px #fff;
-      animation: anim2 1.3s ease-out infinite;
-      animation-delay: 0.5s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(8).floating {
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(1), :host[star="sad"] div.part:nth-child(4) div.part:nth-child(3) .floating-1 {
+      left: 50px; }
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(2), :host[star="sad"] div.part:nth-child(4) div.part:nth-child(3) .floating-2 {
+      margin-left: 50px; }
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(3) {
+      left: 45px; }
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(4) {
+      margin-left: 70px; }
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(5) {
+      left: 60px; }
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(6) {
+      margin-left: 75px; }
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(7) {
+      left: 55px; }
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(8).floating {
       width: 12px;
       height: 12px;
       top: 0;
       left: 50px;
       animation: float1 3s ease infinite;
       animation-delay: .4s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(9).floating {
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(9).floating {
       width: 12px;
       height: 12px;
       top: 22px;
       animation: float2 3s ease infinite;
       animation-delay: 2.5s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(10).floating {
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(10).floating {
       width: 12px;
       height: 12px;
       top: 44px;
       left: 50px;
       animation: float3 3s ease infinite;
       animation-delay: 1.5s; }
-    :host[star="angry"] div.part:nth-child(4) li:nth-child(11).floating {
+    :host[star="sad"] div.part:nth-child(4) li:nth-child(11).floating {
       width: 12px;
       height: 12px;
       top: 67px;
       left: 50px;
       animation: float4 3s ease infinite;
       animation-delay: 1.5s; }
+
+:host[direction="right"] {
+  transform: rotate(180deg); }
+  :host[direction="right"] div.part:nth-child(4) .eyes {
+    top: 38px; }
+  :host[direction="right"] div.part:nth-child(4) .smile {
+    top: 23px; }
+  :host[direction="right"] div.part:nth-child(4) .cheeks {
+    top: 26px; }
+
+:host[direction="right"][star="happy"] div.part:nth-child(4) .smile {
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+  :host[direction="right"][star="happy"] div.part:nth-child(4) .smile::before {
+    top: 5px; }
+
+:host[direction="right"][star="sad"] div.part:nth-child(4) .smile {
+  border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+  :host[direction="right"][star="sad"] div.part:nth-child(4) .smile::before {
+    top: -5px; }
 
 @keyframes f1 {
   0% {
