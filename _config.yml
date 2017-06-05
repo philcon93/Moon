@@ -35,6 +35,13 @@ instagram_username:     phillycheese93
 
 google_analytics: UA-97717982-2
 
+
+# Collections
+
+collections:
+- sketches
+- projects
+
 # Build settings
 markdown: kramdown
 permalink: pretty

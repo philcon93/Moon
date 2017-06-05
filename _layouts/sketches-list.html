@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body class="projects">
+<body class="list">
+    <!-- Header -->
     <header class="header" role="banner">
         <div class="wrapper animated fadeIn">
             <div class="content">
@@ -12,12 +13,12 @@
                     </a>
                 </div>
                 <div class="post-list">
-                    {% for project in site.projects %}
+                    {% for sketch in site.sketches %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
-                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ project.title }}</a>
-                            <p>{{ project.excerpt }}</p>
-                            <a href="{{ site.url }}{{ project.url }}" class="btn zoombtn">Read More</a>
+                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ sketch.title }}</a>
+                            <p>{{ sketch.excerpt }}</p>
+                            <a href="{{ site.url }}{{ sketch.url }}" class="btn zoombtn">Read More</a>
                         </li>
                     </ul>
                     {% endfor %}
