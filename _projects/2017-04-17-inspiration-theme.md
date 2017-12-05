@@ -16,4 +16,4 @@ Inspiration is a new premium theme for Neto. Inspiration is built on Bootstrap 3
 
 http://inspirationtheme.neto.com.au/
 
-![](https://github.com/philcon93/inspiration/blob/master/inspiration.jpg)
+![](https://assets.netohq.com/cms/themes/theme-inspiration.jpg?mtime=20171102144336)

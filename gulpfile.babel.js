@@ -137,7 +137,7 @@ gulp.task('jekyll-build', ['scripts', 'scss', 'pug'], $.shell.task([ 'jekyll bui
 
 // Depoly website to gh-pages.
 gulp.task('gh-pages', () => {
-  return gulp.src('./_site/**/*')
+  return gulp.src('_site/**/*')
     .pipe($.ghPages());
 });
 

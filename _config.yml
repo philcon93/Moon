@@ -20,7 +20,7 @@ bio:                'Professional Space Monkey'
 description:        "Portfolio website based on the Moon one column jekyll theme."
 baseurl:            "PCdesigns" # the subpath of your site, e.g. /blog
 url:                https://philcon93.github.io/PCdesigns
-logo:               'assets/img/logo.png'
+logo:               'assets/img/logo.jpg'
 background:         'assets/img/placeholder-big.jpg'
 
 # Social
