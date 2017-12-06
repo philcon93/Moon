@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Neto Amplify Theme"
-date:   2017-04-17
+date:   2017-07-07
 excerpt: "Neto Premium theme."
 project: true
 tag:
