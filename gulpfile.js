@@ -6,8 +6,7 @@ const { task, src, dest, watch, series, parallel } = require('gulp'),
 	cssnext = require('postcss-cssnext'),
 	plumber = require('gulp-plumber'),
 	postcss = require('gulp-postcss'),
-    sass = require('gulp-sass'),
-    ghPages = require('gulp-gh-pages');
+    sass = require('gulp-sass');
 
 // -------------------- Configure object --------------------
 var config = {};
