@@ -11,7 +11,7 @@ const { task, src, dest, watch, series, parallel } = require('gulp'),
 
 // -------------------- Configure object --------------------
 var config = {};
-config.dist = './dist';
+config.dist = './docs';
 config.SCSS = './scss';
 config.IMG = './img';
 config.JS = '/js';
@@ -63,17 +63,10 @@ task('js', function() {
         .pipe(browsersync.stream());
 });
 
-// Deploy to gh pages
-task('deploy', function(done) {
-    src(`${config.dist}/**/*`)
-        .pipe(ghPages());
-    done();
-});
-
 // BrowserSync
 task('browserSync', function() {
     return browsersync.init({
-      server: { baseDir: "./dist" }
+      server: { baseDir: "./docs" }
     });
 });
 
