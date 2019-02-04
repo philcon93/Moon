@@ -1,6 +1,6 @@
 // Bootstrap and overides
-
+@import "node_modules/bootstrap/scss/bootstrap";
 // Neto standard styles
-@import "../node_modules/startbootstrap-resume/scss/resume";
+@import "node_modules/startbootstrap-resume/scss/resume";
 // Custom styles
 @import "./_custom";

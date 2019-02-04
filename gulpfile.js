@@ -1,10 +1,11 @@
 // -------------------- Required modules --------------------
-var { task, src, dest, watch, series, parallel } = require('gulp'),
+var { task, src, dest, watch, series } = require('gulp'),
 	concat = require('gulp-concat'),
 	cssnext = require('postcss-cssnext'),
 	plumber = require('gulp-plumber'),
 	postcss = require('gulp-postcss'),
-	sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    ghPages = require('gulp-gh-pages');
 
 // -------------------- Configure object --------------------
 var config = {};
@@ -14,17 +15,17 @@ config.IMG = './img';
 config.JS = '/js';
 config.CSS = '/css';
 config.buildTasks = ['html', 'images', 'sass', 'js'];
-config.jsFiles = ['node_modules/jquery/dist/jquery.min.js', 'node_modules/jquery.easing/jquery.easing.min.js', 'node_modules/popper.js/dist/umd/popper.min.js', 'node_modules/bootstrap/dist/js/bootstrap.min.js'];
+config.jsFiles = ['node_modules/jquery/dist/jquery.min.js', 'node_modules/jquery.easing/jquery.easing.min.js', 'node_modules/popper.js/dist/umd/popper.min.js', 'node_modules/bootstrap/dist/js/bootstrap.min.js', './js/app.js'];
 
 //  -------------------- Gulp Tasks --------------------
-// Move the JS files into our /src/js folder
+// Move the index file into dist folder
 task('html', function() {
 	return src('index.html')
 		.pipe(plumber())
 		.pipe(dest(`${config.dist}`))
 });
 
-// Move the JS files into our /src/js folder
+// Move the images into dist folder
 task('images', function() {
 	return src(config.IMG+'/*')
 		.pipe(plumber())
@@ -41,12 +42,18 @@ task('sass', function() {
 		.pipe(dest(`${config.dist}${config.CSS}`))
 });
 
-// Move the JS files into our /src/js folder
+// Move the JS files into our /dist/js folder
 task('js', function() {
 	return src(config.jsFiles)
 		.pipe(plumber())
-		.pipe(concat('vendor.js'))
+		.pipe(concat('app.js'))
 		.pipe(dest(`${config.dist}${config.JS}`))
+});
+
+// Deploy to gh pages
+task('deploy', function() {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages());
 });
 
 // Watches scss files
