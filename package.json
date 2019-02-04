@@ -11,8 +11,7 @@
     "author": "Phil Connah",
     "scripts": {
         "build": "gulp build",
-        "dev": "gulp dev",
-        "deploy": "npm run build && gulp deploy"
+        "dev": "gulp dev"
     },
     "repository": {
         "type": "git",
@@ -31,7 +30,6 @@
         "gulp": "^4.0.0",
         "gulp-clean": "^0.4.0",
         "gulp-concat": "^2.6.1",
-        "gulp-gh-pages": "^0.5.4",
         "gulp-plumber": "^1.2.1",
         "gulp-postcss": "^7.0.1",
         "gulp-sass": "^4.0.2",
