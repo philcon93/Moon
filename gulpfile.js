@@ -64,9 +64,10 @@ task('js', function() {
 });
 
 // Deploy to gh pages
-task('deploy', function() {
-    return gulp.src('./dist/**/*')
+task('deploy', function(done) {
+    src(`${config.dist}/**/*`)
         .pipe(ghPages());
+    done();
 });
 
 // BrowserSync
